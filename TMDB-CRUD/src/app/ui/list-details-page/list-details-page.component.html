@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="movieItemContainer mt-3 mb-3">
+        <app-movie-item *ngFor="let movie of listMovies" [movie]="movie"></app-movie-item>
+    </div>
+
+    <button class="btn btn-warning me-5" (click)="clearList()">Clear List</button>
+    <button class="btn btn-danger" (click)="deleteList()">Delete List</button>
+</div>

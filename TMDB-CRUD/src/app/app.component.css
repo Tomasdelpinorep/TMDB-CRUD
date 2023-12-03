@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(fonts/Poppins-SemiBold.ttf);
+}
+
+*{
+    font-family: 'poppins';
+}
+
+div{
+    background-color: #343434;
+}
+
+.w-inherit{
+    width: inherit;
+}
+
+.content{
+    overflow-x: hidden;
+}

@@ -1,0 +1,9 @@
+<div class="textContainer d-flex">
+  <h4 class="fw-bold mt-3 d-inline text-center" style="color: #9eff00">YOUR LISTS</h4>
+  <button class="btn btn-light iconBox">
+    <i class="bi bi-plus-circle"></i>
+  </button>
+</div>
+<ul class="list-group list-group-horizontal overflow-auto">
+  <app-list-item [routerLink]="['/lists/', l.id]" class="w-100 overflow-hidden " *ngFor="let l of userLists" [userList]="l"></app-list-item>
+</ul>

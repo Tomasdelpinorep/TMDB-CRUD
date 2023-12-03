@@ -1,0 +1,15 @@
+body{
+    overflow-x: hidden;
+}
+
+* {
+    --bs-pagination-active-bg: rgb(158, 255, 0)!important;
+    --bs-pagination-active-border-color: rgb(158, 255, 0)!important;
+    --bs-pagination-active-color: black!important;
+    --bs-pagination-color: rgb(158, 255, 0)!important;
+    --bs-pagination-bg: #151515;
+    --bs-pagination-hover-color: rgb(158, 255, 0);
+    --bs-pagination-hover-bg: gray;
+    --bs-pagination-disabled-bg: black;
+    --bs-pagination-disabled-color:white;
+}

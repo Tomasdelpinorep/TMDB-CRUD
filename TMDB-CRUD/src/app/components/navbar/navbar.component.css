@@ -1,0 +1,20 @@
+h5{
+    padding-left: 40px;
+}
+
+nav{
+
+    padding-left: 50px;
+}
+
+.log{
+    position: fixed;
+    display: flex;
+    width: 16.66666666667%;
+    justify-content: center;
+    bottom: 0;
+}
+
+.w-inherit{
+    width: inherit;
+}
