@@ -1,0 +1,17 @@
+<div class="carouselContainer d-flex justify-content-end mt-3">
+	<div class="text-container d-flex flex-column">
+		<h2 class="titleStyles">{{trendingMovieList[currentSlide].original_title}}</h2>
+		<p class="overviewStyles">{{trendingMovieList[currentSlide].overview}}</p>
+		<button class="btn btnStyles d-flex justify-content-center" [routerLink]="'/movie/' + trendingMovieList[currentSlide].id">Details</button>
+	</div>
+	<ngb-carousel (slide)="onSlideChange($event)" *ngIf="trendingMovieBackDrops" [showNavigationArrows]="showNavigationArrows"
+		[showNavigationIndicators]="showNavigationIndicators" class="custom-carousel">
+		<ng-template ngbSlide *ngFor="let image of trendingMovieBackDrops">
+			<div class="slide-container">
+				<div class="image-wrapper d-flex align-content-end">
+					<img class="imageStyle" [src]="image" alt="Random slide" />
+				</div>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+</div>

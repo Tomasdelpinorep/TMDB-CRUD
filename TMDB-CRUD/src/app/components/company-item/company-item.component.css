@@ -1,0 +1,12 @@
+.nameStyle{
+    color:white;
+    text-align: center;
+}
+
+a, a:visited{
+    text-decoration: none;
+}
+
+.negMargin{
+    margin-bottom: 30px;
+}

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListDetailsResponse } from '../models/list-details';
+import { ListDetailsResponse } from '../models/models/list-details';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
@@ -23,12 +23,9 @@ export class ListService {
   }
 
 
-  clearList(listId: number, sessionId: string) {
-    return this.http.post(`${environment.baseUrl}/list/${listId}/clear?api_key=${environment.apiKey}`, {
-      params: {
-        session_id: sessionId,
-        confirm: true
-      }
+  clearList(listId: number, sessionId: string): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/list/${listId}/clear?api_key=${environment.apiKey}&session_id=${sessionId}&confirm=true`,{
+
     });
   }
 

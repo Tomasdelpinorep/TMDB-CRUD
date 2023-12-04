@@ -1,0 +1,12 @@
+.form-control{
+    background-color: #272727 !important;
+    font-family: "poppins";
+    color: lightgray !important;
+    border: none !important;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.8) !important;
+    flex: auto !important;
+}
+
+i{
+    color: lightgray;
+}   

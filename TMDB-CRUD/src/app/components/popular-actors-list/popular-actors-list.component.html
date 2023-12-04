@@ -1,0 +1,13 @@
+<div class="row justify-content-center">
+  <div class="col-10">
+    <h4 class="fw-bold mt-3 d-inline" style="color: #9eff00">POPULAR</h4>
+    <ul class="list-group list-group-horizontal overflow-auto overflow-y-hidden">
+      <app-actor-item class="mt-2 pelis me-3" *ngFor="let a of actorList" [actor]="a" [page]="page"></app-actor-item>
+    </ul>
+  </div>
+  <div class="paginationContainer position-absolute bottom-0">
+    <ngb-pagination [collectionSize]="10000" [pageSize]="20" [maxSize]="3" [rotate]="true" [(page)]="page"
+      (pageChange)="loadNewPage($event)" class="align-self-centers pagination"
+      aria-label="Default pagination"></ngb-pagination>
+  </div>
+</div>

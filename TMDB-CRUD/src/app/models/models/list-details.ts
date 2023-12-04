@@ -20,7 +20,7 @@ export interface Movie {
     backdrop_path:     string;
     id:                number;
     title:             string;
-    original_language: string;
+    original_language: OriginalLanguage;
     original_title:    string;
     overview:          string;
     poster_path:       string;
@@ -32,3 +32,11 @@ export interface Movie {
     vote_average:      number;
     vote_count:        number;
 }
+
+export enum OriginalLanguage {
+    En = "en",
+    Es = "es",
+    Hi = "hi",
+    Sv = "sv",
+  }
+  

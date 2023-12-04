@@ -1,0 +1,66 @@
+.carouselContainer {
+    width: 1065px;
+    height: 350px;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    /* position: relative; */
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* 
+.carousel {
+    position: static !important;
+} */
+
+.custom-carousel {
+    width: 30%;
+}
+
+.imageStyle {
+    width: 100%;
+}
+
+.custom-carousel::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 35;
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 10%, rgba(255, 255, 255, 0) 25%);
+}
+
+.text-container {
+    width: 70%;
+}
+
+.titleStyles {
+    color: white;
+    margin: 20px 40px 20px 40px;
+}
+
+.overviewStyles {
+    color: lightgray;
+    max-width: 85%;
+    max-height: 170px;
+    overflow: hidden;
+    margin-left: 40px;
+}
+
+.btnStyles {
+    background-color: rgb(158, 255, 0);
+    width: 25%;
+    margin: auto;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 1px 1px 15px 0px rgba(158, 255, 0, 0.75);
+    -moz-box-shadow: 1px 1px 15px 0px rgba(158, 255, 0, 0.75);
+    box-shadow: 1px 1px 15px 0px rgba(158, 255, 0, 0.75);
+    transition: transform 0.2s ease-in-out;
+    font-weight: bolder;
+}
+
+.btnStyles:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-3 d-flex flex-wrap justify-content-center">
+        <div class="actorPhoto">
+            <img [src]="getActorImageUrl()" class="p-2" alt="actor photo">
+        </div>
+    </div>
+
+    <div class="col-8 d-flex flex-column justify-content-center h-100">
+        <div class="mt-3">
+            <h2 class=" fw-bold" style="color: #9EFF00;">{{actorDetails.name}}</h2>
+            <div class="text-light">
+                <h3 class="mt-2 fw-bold"> Biography </h3>
+                <p class="mt-3 fw-bold" style="color: #C3C3C3;">{{actorDetails.biography}}</p>
+                <p class="mt-3 fw-bold" style="color: #C3C3C3;" *ngIf="actorDetails.biography == ''">
+                This person doesn't have a biography.
+                </p>
+            </div>
+            <h5>Birthday | 
+                <span class="details">{{actorDetails.birthday}}</span>
+                <span class="details" *ngIf="actorDetails.birthday == null">No Data</span>
+            </h5>
+            <h5>Place of birth | 
+                <span class="details">{{actorDetails.place_of_birth}}</span>
+                <span class="details" *ngIf="actorDetails.place_of_birth == null">No Data</span>
+            </h5>
+            <h5>Gender | 
+                <span class="details">{{genderToString(actorDetails.gender)}}</span>
+                <span class="details" *ngIf="actorDetails.gender == null">No Data</span>
+            </h5>
+        </div>
+    </div>
+</div>

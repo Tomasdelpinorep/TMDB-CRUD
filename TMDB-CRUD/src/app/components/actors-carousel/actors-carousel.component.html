@@ -1,0 +1,17 @@
+<div class="carouselContainer d-flex justify-content-end mt-3">
+	<div class="text-container d-flex flex-column">
+		<h2 class="titleStyles">{{top10Details[currentSlide].name}}</h2>
+		<p class="overviewStyles">{{top10Details[currentSlide].biography}}</p>
+		<button class="btn btnStyles d-flex justify-content-center" [routerLink]="'/actor/' + top10Details[currentSlide].id">Details</button>
+	</div>
+	<ngb-carousel (slide)="onSlideChange($event)" *ngIf="top10Images" [showNavigationArrows]="showNavigationArrows"
+		[showNavigationIndicators]="showNavigationIndicators" class="custom-carousel">
+		<ng-template ngbSlide *ngFor="let image of top10Images">
+			<div class="slide-container">
+				<div class="image-wrapper">
+					<img class="imageStyle" [src]="image" alt="Random slide" />
+				</div>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+</div>

@@ -1,0 +1,6 @@
+<a [routerLink]="['/actors/', actor.id]" (click)="sendActorPage(actor.id, page)">
+    <div class="card shadow-sm mb-2 border border-3">
+        <img [src]="getActorImageUrl()">
+    </div>
+    <h5 class="nameStyle negMargin mb-3">{{actor.name}}</h5>
+</a>

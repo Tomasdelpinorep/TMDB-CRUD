@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center flex-column align-content-center flex-wrap background">
+    <app-search-series (sendSearchedSerieList)="loadSearchedList($event)" class="w-100"></app-search-series>
+    <app-carousell class="m-auto mb-5"></app-carousell>
+    <div>
+        <h1 class="text-center fw-bold mt-2" style="color: #9eff00">TV SERIES</h1>
+    </div>
+    <app-top-rated-series-list *ngIf="isSearchEmpty()" class="w-100 mb-5 mt-5"></app-top-rated-series-list>
+    <app-series-onair-list *ngIf="isSearchEmpty()" class="w-100 mb-5"></app-series-onair-list>
+    <app-searched-series-list [searchedSerieList]="searchedSerieList" *ngIf="!isSearchEmpty()"
+        class="w-100 mb-5"></app-searched-series-list>
+    <div>
+        <h1 class="text-center fw-bold mt-2" style="color: #9eff00">MOVIES</h1>
+    </div>
+    
+</div>

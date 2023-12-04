@@ -1,0 +1,15 @@
+.row{
+    background-color: black;
+}
+li{
+    font-size: x-large;
+}
+.seriePoster{
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    color: #9EFF00;
+    text-shadow: 0 0 5px #9EFF00,  0 0 15px #9EFF00;
+}

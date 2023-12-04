@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../services/account.service';
-import { AccountDetailsResponse } from '../../models/account-details';
-import { UserList } from '../../models/user-lists.interface';
+import { AccountDetailsResponse } from '../../models/models/account-details';
+import { UserList } from '../../models/models/user-lists.interface';
 
 @Component({
   selector: 'app-user-lists',

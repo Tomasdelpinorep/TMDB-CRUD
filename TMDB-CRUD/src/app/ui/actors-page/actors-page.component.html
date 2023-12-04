@@ -1,0 +1,14 @@
+<div class="d-flex flex-column flex-wrap vh-100">
+  <app-search-actors
+    (sendSearchedMovieList)="loadSearchedList($event)"
+    class="w-100"
+  ></app-search-actors>
+  <app-actors-carousel class="me-auto ms-auto mb-5"></app-actors-carousel>
+  <app-popular-actors-list *ngIf="isSearchEmpty()" class="w-100 mb-5"></app-popular-actors-list>
+  <app-searched-actors-list
+    class="w-100 mb-5"
+    [searchedActorList]="searchedActorList"
+    *ngIf="!isSearchEmpty()"
+  ></app-searched-actors-list>
+</div>
+

@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ListService } from '../../services/list.service';
 import { ActivatedRoute } from '@angular/router';
-import { ListDetailsResponse, Movie } from '../../models/list-details';
+import { ListDetailsResponse, Movie} from '../../models/models/list-details';
+
 
 @Component({
   selector: 'app-list-details-page',

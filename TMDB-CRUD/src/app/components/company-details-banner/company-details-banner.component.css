@@ -1,0 +1,34 @@
+.row {
+    background-color: black;
+    overflow: hidden;
+}
+
+li {
+    font-size: x-large;
+}
+
+.companyPhoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+img{
+    padding: 0 !important;
+    width: 300px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #9EFF00;
+    text-shadow: 0 0 5px #9EFF00, 0 0 15px #9EFF00;
+}
+
+h5{
+    color: white;
+}

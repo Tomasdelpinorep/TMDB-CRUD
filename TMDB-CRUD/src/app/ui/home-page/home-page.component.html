@@ -1,3 +1,25 @@
-<div class="d-flex justify-content-center flex-column align-content-center flex-wrap background">
-    <app-user-lists></app-user-lists>
+<div
+  class="d-flex justify-content-center flex-column align-content-center flex-wrap background"
+>
+  <app-search-movies
+    (sendSearchedMovieList)="loadSearchedList($event)"
+    class="w-100"
+  ></app-search-movies>
+  <app-carousell class="m-auto mb-5"></app-carousell>
+  <div>
+    <h1 class="text-center fw-bold mt-2" style="color: #9eff00">MOVIES</h1>
+  </div>
+  <app-upcoming-movies-list
+    *ngIf="isSearchEmpty()"
+    class="w-100 mb-5"
+  ></app-upcoming-movies-list>
+  <app-popular-movies-list
+    *ngIf="isSearchEmpty()"
+    class="w-100 mb-5"
+  ></app-popular-movies-list>
+  <app-searched-movies-list
+    class="w-100 mb-5"
+    [searchedMovieList]="searchedMovieList"
+    *ngIf="!isSearchEmpty()"
+  ></app-searched-movies-list>
 </div>

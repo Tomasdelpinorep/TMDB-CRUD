@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UserList } from '../../models/user-lists.interface';
+import { UserList } from '../../models/models/user-lists.interface';
 
 @Component({
   selector: 'app-list-item',

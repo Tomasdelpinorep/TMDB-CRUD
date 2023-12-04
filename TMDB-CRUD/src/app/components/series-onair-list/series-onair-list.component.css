@@ -1,0 +1,28 @@
+ul{
+    width: 100%;
+}
+
+.series{
+    width: 200px;
+}
+
+/* Este estilo es para Chrome, en Firefox no va*/
+.list-group-horizontal::-webkit-scrollbar {
+    height: 5px; /* Altura de la barra de desplazamiento */
+}
+
+/* Esto es el color de la barra que manejas */
+.list-group-horizontal::-webkit-scrollbar-thumb {
+    background-color: white; 
+    border-radius: 50px;
+}
+
+/* Esto es es color del fondo de la barra*/
+.list-group-horizontal::-webkit-scrollbar-track {
+    background-color: gray; 
+    border-radius: 50px;
+}
+
+.listContainer{
+    width: 100%;
+}

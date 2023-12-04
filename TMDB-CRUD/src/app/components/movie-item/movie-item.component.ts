@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../../models/list-details';
-
+import { Movie } from '../../models/models/movie-list.interface';
 @Component({
   selector: 'app-movie-item',
   templateUrl: './movie-item.component.html',
