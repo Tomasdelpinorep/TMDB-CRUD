@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListDetailsResponse } from '../models/models/list-details';
@@ -15,10 +15,7 @@ export class ListService {
   }
 
   deleteList(listId: number, sessionId: string) {
-    return this.http.delete(`${environment.baseUrl}/list/${listId}?api_key=${environment.apiKey}`, {
-      params: {
-        sessionId: sessionId
-      }
+    return this.http.delete(`${environment.baseUrl}/list/${listId}?api_key=${environment.apiKey}&session_id=${sessionId}`, {
     });
   }
 
@@ -27,6 +24,12 @@ export class ListService {
     return this.http.post<any>(`${environment.baseUrl}/list/${listId}/clear?api_key=${environment.apiKey}&session_id=${sessionId}&confirm=true`,{
 
     });
+  }
+
+  createList(newList: any, sessionId: string){
+    return this.http.post(`https://api.themoviedb.org/3/list?api_key=${environment.apiKey}&session_id=${sessionId}`,{
+      newList
+    })
   }
 
 }

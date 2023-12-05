@@ -1,10 +1,54 @@
 <div class="textContainer d-flex justify-content-center">
-  <h4 class="fw-bold mt-3 d-inline text-center" style="color: #9eff00">YOUR LISTS</h4>
-  <button class="btn btn-light iconBox align-self-center ms-auto">
-  <i class="bi bi-trash3-fill"></i>
+  <h4 class="fw-bold mt-3 me-3 d-inline text-center" style="color: #9eff00">YOUR LISTS</h4>
+  <button (click)="open(createListModal)" class="btn btn-light iconBox align-self-center">
+    <i class="bi bi-plus-square "></i>
   </button>
 </div>
-<ul class="list-group list-group-horizontal overflow-auto">
-  <app-list-item [routerLink]="['/lists/', l.id]" class="w-100 overflow-hidden " *ngFor="let l of userLists"
-    [userList]="l"></app-list-item>
-</ul>
+<div class="d-flex flex-nowrap overflow-auto">
+  <ul class="list-group list-group-horizontal">
+    <p *ngIf="isEmpty(userLists)" class="text-white text-center w-100">You have no lists</p>
+    <app-list-item [routerLink]="['/lists/', l.id]" class="w-100" *ngFor="let l of userLists"
+      [userList]="l"></app-list-item>
+  </ul>
+</div>
+
+
+<!-- MODAL -->
+<ng-template #createListModal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">New List</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form (ngSubmit)="submit()" [formGroup]="newListForm">
+			<div class="mb-3">
+				<label for="listName">Name</label>
+				<div class="input-group">
+					<input
+						id="listName"
+						class="form-control"
+						name="listName"
+            [formControl]="nameControl"
+					/>
+				</div>
+        <p class="text-danger" *ngIf="nameControl.touched && nameControl.invalid">List name is required</p>
+			</div>
+
+      <div class="mb-3">
+				<label for="listDescription">Description</label>
+				<div class="input-group">
+					<input
+						id="listDescription"
+						class="form-control"
+						name="listDescription"
+            [formControl]="descriptionControl"
+					/>
+				</div>
+        <p class="text-danger" *ngIf="descriptionControl.touched && descriptionControl.invalid">List description is required</p>
+			</div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark">Save</button>
+      </div>
+		</form>
+	</div>
+</ng-template>

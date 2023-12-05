@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ListService } from '../../services/list.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ListDetailsResponse, Movie} from '../../models/models/list-details';
 
 
@@ -11,6 +11,7 @@ import { ListDetailsResponse, Movie} from '../../models/models/list-details';
 })
 export class ListDetailsPageComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
+  router: Router = inject(Router)
   listId!: number;
   listDetails!: ListDetailsResponse;
   listMovies: Movie[] = [];
@@ -32,9 +33,7 @@ export class ListDetailsPageComponent implements OnInit {
   }
 
   clearList() {
-    if (sessionStorage.getItem('SESSION_ID')) {
-
-    }
+    if (sessionStorage.getItem('SESSION_ID'))
     this.listService.clearList(this.listId, this.sessionId).subscribe(resp => {
       window.location.reload();
     })
@@ -42,7 +41,15 @@ export class ListDetailsPageComponent implements OnInit {
 
   deleteList() {
     if (sessionStorage.getItem('SESSION_ID'))
-      this.listService.deleteList(this.listId, this.sessionId);
+      this.listService.deleteList(this.listId, this.sessionId).subscribe(resp => {
+        this.router.navigate(['/lists']);
+    });
+  }
+
+  isEmpty(list: any[]){
+    if(list.length == 0 ) return true;
+
+    return false;
   }
 
 }

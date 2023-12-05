@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ApprovedPageComponent } from './ui/approved-page/approved-page.component';
@@ -47,6 +47,8 @@ import { SearchedSeriesListComponent } from './components/searched-series-list/s
 import { SearchedActorsListComponent } from './components/searched-actors-list/searched-actors-list.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { UpcomingMoviesListComponent } from './components/upcoming-movies-list/upcoming-movies-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RemoveNewListInterceptor } from './interceptors/removeNewListInterceptor';
 
 @NgModule({
   declarations: [
@@ -102,8 +104,13 @@ import { UpcomingMoviesListComponent } from './components/upcoming-movies-list/u
     HttpClientModule,
     NgbModule,
     RouterLink,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: RemoveNewListInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
