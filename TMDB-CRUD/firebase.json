@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "dist/tmdb-crud/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+        { "source": "/home", "destination": "/index.html" },
+        { "source": "/movie/**", "destination": "/index.html" },
+        { "source": "/tv/**", "destination": "/index.html" },
+        { "source": "**", "destination": "/index.html" }
+   ]
+   
+  }
+}

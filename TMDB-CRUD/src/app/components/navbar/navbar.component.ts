@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class NavbarComponent {
   https: any;
+title = environment.title;
   constructor(private authService: AuthenticationService) {}
   requestToken!: string;
 

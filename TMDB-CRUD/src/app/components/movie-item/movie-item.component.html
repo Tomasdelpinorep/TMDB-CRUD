@@ -1,3 +1,5 @@
-<div class="card shadow-sm mb-2 border border-3">
-    <img [src]="getMovieImage()">
-</div>
+<a [routerLink]="['/movie/', movie.id]">
+    <div class="card shadow-sm mb-2 border border-3">
+        <img [src]="getMovieImage()">
+    </div>
+</a>

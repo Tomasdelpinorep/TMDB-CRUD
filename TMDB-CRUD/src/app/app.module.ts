@@ -49,6 +49,7 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
 import { UpcomingMoviesListComponent } from './components/upcoming-movies-list/upcoming-movies-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RemoveNewListInterceptor } from './interceptors/removeNewListInterceptor';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -83,9 +84,9 @@ import { RemoveNewListInterceptor } from './interceptors/removeNewListIntercepto
     SerieDetailsBannerComponent,
     ActorDetailsPageComponent,
     KnownForListComponent,
-    KnownForMovieItemComponent,   
+    KnownForMovieItemComponent,
     CompanyItemComponent,
-    ActorListComponent,   
+    ActorListComponent,
     ActorDetailsBannerComponent,
     CompanyListComponent,
     SearchMoviesComponent,
@@ -95,7 +96,7 @@ import { RemoveNewListInterceptor } from './interceptors/removeNewListIntercepto
     CompanyDetailsPageComponent,
     CompanyDetailsBannerComponent,
     SearchedSeriesListComponent,
-    SearchedActorsListComponent
+    SearchedActorsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,13 +105,16 @@ import { RemoveNewListInterceptor } from './interceptors/removeNewListIntercepto
     HttpClientModule,
     NgbModule,
     RouterLink,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: RemoveNewListInterceptor,
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RemoveNewListInterceptor,
+      multi: true,
+    },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
